@@ -1,0 +1,111 @@
+// Your API key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
+var apiKey = '______________';
+// Find your Telegram chatbot token by logging into the BotFather in Telegram, 
+// selecting your bot, and clicking the "API Token" button.
+var token = "_______";
+var telegramUrl = "https://api.telegram.org/bot" + token;
+// In the Google App Script project, go to "Publish" in the top navigation bar. 
+// Under "Deploy as web app", select "Deploy". This will open a pop-up window. 
+// Your web app URL will be listed in the "Current web app URL" field.
+var webappUrl = "https://script.google.com/macros/s/___________/exec";
+
+function doPost(e) {
+  var contents = JSON.parse(e.postData.contents);
+
+  if (contents.message) {
+    var id = contents.message.from.id;
+    var text = contents.message.text;
+    var txt = bot_response(text);
+    if (txt.length > 0) {
+      Utilities.sleep(200);
+      return sendMessage(id, txt);
+    } else {
+      return text;
+    }
+  }
+}
+
+// reference https://beta.openai.com/playground?model=text-davinci-003
+function bot_response(txt) {  
+  var model = 'text-davinci-003';
+  if ( txt == "" ) {
+    return "";
+  }
+  if( txt.includes("/start")) {
+    return "";
+  }  
+  var payload = {
+    'prompt': txt,
+    'model': model,
+    'max_tokens': 2048
+  };  
+  var options = {
+    'method': 'POST',
+    'headers': {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + apiKey
+    },
+    'payload': JSON.stringify(payload)
+  };
+  var response = UrlFetchApp.fetch('https://api.openai.com/v1/completions', options);
+  var txt = JSON.parse(response.getContentText()).choices[0].text;  
+  return txt;
+}
+
+function sendMessage(id, text) {
+  var txt = "<pre>" + text + "</pre>";
+  var data = {
+    method: "post",
+    payload: {
+      method: "sendMessage",
+      chat_id: String(id),
+      text: txt,
+      parse_mode: "HTML",
+
+    }
+  };
+  Logger.clear;
+  try {
+    var response = UrlFetchApp.fetch( telegramUrl + "/", data);
+    var resp = response.getContentText().toString();
+    Logger.log(resp);
+  } 
+  catch ( e ) {
+    Logger.log("Unable to send message");
+  }
+}
+
+function get_status() {
+  var url = telegramUrl + "/getUpdates";
+  Logger.clear;
+  try {
+    var response = UrlFetchApp.fetch(url);
+    var resp = response.getContentText().toString();
+    Logger.log(resp);
+  } 
+  catch ( e ) {
+    Logger.log(url);
+  }
+}
+
+function RemoveWebhook() {
+  var url = telegramUrl + "/deleteWebhook";
+  var response = UrlFetchApp.fetch(url);
+  Logger.clear;
+  Logger.log(response);
+}
+
+function WebhookInfo() {
+  var url = telegramUrl + "/getWebhookInfo";
+  var response = UrlFetchApp.fetch(url);
+  Logger.clear;
+  Logger.log(url);
+  Logger.log(response);
+}
+
+function setWebhook() {
+  var url = telegramUrl + "/setWebhook?url=" + webappUrl;
+  var response = UrlFetchApp.fetch(url);
+  Logger.clear;
+  Logger.log(response);
+}
