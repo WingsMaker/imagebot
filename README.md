@@ -2,6 +2,9 @@
 How to create serverless telegram chatbot using google app script and CHATGPT API from OpenAI.
 ![image](https://user-images.githubusercontent.com/32192638/209757253-147222c4-1860-4893-aff8-842031fd30ba.png)
 
+# Example
+https://t.me/KHTelegramBot
+
 # Requirements
 - Google cloud account ( where your android playstore account is )
 - OpenAI account , see https://beta.openai.com/account/api-keys
@@ -44,18 +47,21 @@ Copy the web app url to the clipboard for later use.
 
 [5] Update the values of webappUrl in the script.
 Change the value of statement, paste the url from above into here.
-   var webappUrl = "__paste_here__";
+   
+var webappUrl = "__paste_here__";
 
 [6] Update the values of token in the script.
 Find your Telegram chatbot token by logging into the BotFather in Telegram, selecting your bot, and clicking the "API Token" button.
 Change the value of statement, paste the url from above into here.
-   var token = "__replace_here__";
+
+var token = "__replace_here__";
 
 [7] Update the values of apiKey in the script.
 Your API key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
 ( see https://beta.openai.com/account/api-keys )
 Change the value of statement, paste the url from above into here.
-   var apiKey = "__replace_here__";
+
+var apiKey = "__replace_here__";
 
 [8] Save the script and REDO the deployment process in step 4 
 since the code has been changed to fill in the webappUrl, token, apiKey.
