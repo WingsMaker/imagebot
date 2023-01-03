@@ -46,20 +46,21 @@ Fill in the form and click "Deploy".
 Copy the web app url to the clipboard for later use.
 
 [5] Update the values of webappUrl in the script.
-Change the value of statement, paste the url from above into here.
-   
+Change the value of statement, paste the url address into here.
+
 var webappUrl = "__paste_here__";
 
 [6] Update the values of token in the script.
 Find your Telegram chatbot token by logging into the BotFather in Telegram, selecting your bot, and clicking the "API Token" button.
-Change the value of statement, paste the url from above into here.
+( see https://www.youtube.com/watch?v=aNmRNjME6mE )
+Change the value of statement, paste the bot token into here.
 
 var token = "__replace_here__";
 
 [7] Update the values of apiKey in the script.
-Your API key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
+The api secret key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
 ( see https://beta.openai.com/account/api-keys )
-Change the value of statement, paste the url from above into here.
+Change the value of statement, paste the api secret key into here.
 
 var apiKey = "__replace_here__";
 
