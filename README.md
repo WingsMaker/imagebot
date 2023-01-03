@@ -43,6 +43,7 @@ Fill in the form and click "Deploy".
 ( for more see https://www.youtube.com/watch?v=-AlstV1PAaA )
 
 ![image](https://user-images.githubusercontent.com/32192638/209758768-29dda612-80c7-425e-8a39-e3e80d2fe5bc.png)
+
 Copy the web app url to the clipboard for later use.
 
 [5] Update the values of webappUrl in the script.
