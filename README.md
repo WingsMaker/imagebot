@@ -60,7 +60,7 @@ var token = "__replace_here__";
 
 [7] Update the values of apiKey in the script.
 The api secret key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
-( see https://beta.openai.com/account/api-keys )
+( for more see https://www.youtube.com/watch?v=DFmmiYlbgX0 )
 Change the value of statement, paste the api secret key into here.
 
 var apiKey = "__replace_here__";
