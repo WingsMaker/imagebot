@@ -6,7 +6,7 @@ How to create serverless telegram chatbot using google app script and CHATGPT AP
 https://t.me/KHTelegramBot
 
 # Requirements
-- Google cloud account ( where your android playstore account is )
+- Google Gmail account ( where your android playstore account is )
 - OpenAI account , see https://beta.openai.com/account/api-keys
 - Telegram chatbot token, see https://t.me/BotFather
 
