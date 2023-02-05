@@ -1,5 +1,6 @@
-// Your API key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
-var apiKey = '______________';
+// Your API key for Chat GPT is located inside OpenAI.com like below ( expired )
+// see https://platform.openai.com/account/api-keys
+var apiKey = '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';
 // Find your Telegram chatbot token by logging into the BotFather in Telegram, 
 // selecting your bot, and clicking the "API Token" button.
 var token = "_______";
