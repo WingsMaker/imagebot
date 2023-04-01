@@ -9,6 +9,7 @@ How to create serverless telegram chatbot using google app script and CHATGPT AP
 
 # Getting Started - Google App Script Project
 [1] Goto https://script.google.com/home , click "New Project" 
+
 ![image](https://user-images.githubusercontent.com/32192638/209757404-15c3ba33-7a4c-4804-9634-eb417d8069b2.png)
 
 [2] Write the scripts, copy paste from below template url :
@@ -24,6 +25,7 @@ Click on the "Untitled project" to rename the project as something else. Example
 ![image](https://user-images.githubusercontent.com/32192638/209757895-ce873366-3f4b-4063-96ba-1ecb76d07566.png)
 
 [4] Deploy as google web app
+
 In the Google App Script project, go to "Publish" in the top navigation bar. 
 Under "Deploy as web app", select "Deploy". This will open a pop-up window. 
 Your web app URL will be listed in the "Current web app URL" field.
@@ -44,11 +46,13 @@ Fill in the form and click "Deploy".
 Copy the web app url to the clipboard for later use.
 
 [5] Update the values of webappUrl in the script.
+
 Change the value of statement, paste the url address into here.
 
 var webappUrl = "__paste_here__";
 
 [6] Update the values of token in the script.
+
 Find your Telegram chatbot token by logging into the BotFather in Telegram, selecting your bot, and clicking the "API Token" button.
 ( see https://www.youtube.com/watch?v=aNmRNjME6mE )
 Change the value of statement, paste the bot token into here.
@@ -56,6 +60,7 @@ Change the value of statement, paste the bot token into here.
 var token = "__replace_here__";
 
 [7] Update the values of apiKey in the script.
+
 The api secret key for Chat GPT is located in the My Apps page of your Chat GPT dashboard.
 ( for more see https://www.youtube.com/watch?v=DFmmiYlbgX0 )
 Change the value of statement, paste the api secret key into here.
@@ -63,9 +68,11 @@ Change the value of statement, paste the api secret key into here.
 var apiKey = "__replace_here__";
 
 [8] Save the script and REDO the deployment process in step 4 
+
 since the code has been changed, need to update the value of webappUrl in [7].
 
 [9] Run the "setWebhook" function for only once to make sure actual telegram bot able to callback this google web app.
+
 ![image](https://user-images.githubusercontent.com/32192638/209759943-7c559c72-9a68-4b45-a864-639a3b9e11e6.png)
 
 Your telegram bot is ready !
