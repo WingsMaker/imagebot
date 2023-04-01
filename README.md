@@ -63,7 +63,7 @@ Change the value of statement, paste the api secret key into here.
 var apiKey = "__replace_here__";
 
 [8] Save the script and REDO the deployment process in step 4 
-since the code has been changed to fill in the webappUrl, token, apiKey.
+since the code has been changed, need to update the value of webappUrl in [7].
 
 [9] Run the "setWebhook" function for only once to make sure actual telegram bot able to callback this google web app.
 ![image](https://user-images.githubusercontent.com/32192638/209759943-7c559c72-9a68-4b45-a864-639a3b9e11e6.png)
