@@ -1,0 +1,51 @@
+var token = "...";   // telegram bot token
+var apikey = "...";  // openai api key
+var weburi = "...."; // google webapp url removing the "https://script.google.com/macros/s/" and "/exec"
+
+function doPost(e) {
+  var contents = JSON.parse(e.postData.contents);
+  var txt = "";  
+  if (contents.message) {
+    var id = contents.message.from.id;
+    var text = contents.message.text;
+    if( text.includes("/image") ) {
+      txt = text.replace("/image","");
+      txt = txt.trim();
+      if (txt.length > 0) {
+        var url = codelib.call_dalle(apikey, txt);
+        var success = codelib.sendImage(token, url, id);
+      }
+      return "/image";
+    }
+    if( text.includes("/start") ) {
+      txt = "Example : /chat what is openai ?\n/image a yellow cat standing with one leg"
+    }
+    if( text.includes("/chat") ) {
+      txt = text.replace("/chat","");
+      txt = txt.trim();
+      if (txt.length > 0) {
+        txt = codelib.ChatGPT( apikey, txt );
+      }
+    }
+    if (txt.length > 0) {
+      Utilities.sleep(200);
+      codelib.sendMessage(token, id, txt);
+      return txt;
+    }
+  }
+}
+
+function stop_bot() {
+  var txt = codelib.RemoveWebhook(token);
+  Logger.log(txt);
+}
+
+function bot_info() {
+  var txt = codelib.WebhookInfo(token);
+  Logger.log(txt);
+}
+
+function start_bot() {  
+  var txt = codelib.setWebhook(token,weburi);
+  Logger.log(txt);
+}
