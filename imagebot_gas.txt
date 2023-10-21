@@ -8,8 +8,8 @@ function doPost(e) {
   if (contents.message) {
     var id = contents.message.from.id;
     var text = contents.message.text;
-    if( text.includes("/") ) {
-      return;
+    if( text.includes("/")) {
+      return ;
     }
     if (text.length > 0) {
       txt = text.trim();
@@ -19,6 +19,7 @@ function doPost(e) {
       }
       return;
     }
+  }
 }
 
 function stop_bot() {
