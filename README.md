@@ -12,8 +12,6 @@ How to create serverless telegram chatbot using google app script and CHATGPT AP
 # Getting Started - Google App Script Project
 [1] Goto https://script.google.com/home , click "New Project" 
 
-![image](https://user-images.githubusercontent.com/32192638/209757404-15c3ba33-7a4c-4804-9634-eb417d8069b2.png)
-
 [2] Write the scripts, copy paste from below template url :
 
 https://raw.githubusercontent.com/WingsMaker/chatgptbot/main/imagebot_gas.txt
