@@ -16,7 +16,7 @@ How to create serverless telegram chatbot using google app script and CHATGPT AP
 
 [2] Write the scripts, copy paste from below template url :
 
-https://raw.githubusercontent.com/WingsMaker/chatgptbot/main/chatgpt_gas.txt
+https://raw.githubusercontent.com/WingsMaker/chatgptbot/main/imagebot_gas.txt
 
 ![image](https://user-images.githubusercontent.com/32192638/209757618-56b172a8-5356-43c2-b215-64e4bff19d85.png)
 
@@ -47,11 +47,12 @@ Fill in the form and click "Deploy".
 
 Copy the web app url to the clipboard for later use.
 
-[5] Update the values of webappUrl in the script.
+[5] Update the values of weburi in the script.
 
-Change the value of statement, paste the url address into here.
+Remove the substrings "https://script.google.com/macros/s/" and "/exec" of url. Copy the result to clipboard.
+Change the value of statement, paste the weburi address into here.
 
-var webappUrl = "__paste_here__";
+var weburi  = "__paste_here__";
 
 [6] Update the values of token in the script.
 
@@ -73,7 +74,7 @@ var apiKey = "__replace_here__";
 
 since the code has been changed, need to update the value of webappUrl in [7].
 
-[9] Run the "setWebhook" function for only once to make sure actual telegram bot able to callback this google web app.
+[9] Run the "start_bot" function for only once to make sure actual telegram bot able to callback this google web app.
 
 ![image](https://user-images.githubusercontent.com/32192638/209759943-7c559c72-9a68-4b45-a864-639a3b9e11e6.png)
 
