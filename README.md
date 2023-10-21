@@ -76,6 +76,6 @@ since the code has been changed, need to update the value of webappUrl in [7].
 
 [9] Run the "start_bot" function for only once to make sure actual telegram bot able to callback this google web app.
 
-![image](https://user-images.githubusercontent.com/32192638/209759943-7c559c72-9a68-4b45-a864-639a3b9e11e6.png)
+![image](https://github.com/WingsMaker/chatgptbot/assets/32192638/416ecbda-30bb-4d63-adb3-d3a24da7822f)
 
 Your telegram bot is ready !
