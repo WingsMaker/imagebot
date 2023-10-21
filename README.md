@@ -1,6 +1,7 @@
 # Introduction 
 How to create serverless telegram chatbot using google app script and CHATGPT API from OpenAI.
-![image](https://user-images.githubusercontent.com/32192638/229262160-0a5e4791-2e57-4dda-af97-15f9356ea21a.png)
+( added with Dall.E image generation )
+![image](https://github.com/WingsMaker/chatgptbot/assets/32192638/425f9de3-877c-4e57-8488-69e393d988b3)
 
 
 # Requirements
