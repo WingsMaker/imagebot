@@ -8,31 +8,17 @@ function doPost(e) {
   if (contents.message) {
     var id = contents.message.from.id;
     var text = contents.message.text;
-    if( text.includes("/image") ) {
-      txt = text.replace("/image","");
-      txt = txt.trim();
+    if( text.includes("/") ) {
+      return;
+    }
+    if (text.length > 0) {
+      txt = text.trim();
       if (txt.length > 0) {
-        var url = codelib.call_dalle(apikey, txt);
-        var success = codelib.sendImage(token, url, id);
+        var url = call_dalle(apikey, txt);
+        sendImage(token, url, id);
       }
-      return "/image";
+      return;
     }
-    if( text.includes("/start") ) {
-      txt = "Example : /chat what is openai ?\n/image a yellow cat standing with one leg"
-    }
-    if( text.includes("/chat") ) {
-      txt = text.replace("/chat","");
-      txt = txt.trim();
-      if (txt.length > 0) {
-        txt = codelib.ChatGPT( apikey, txt );
-      }
-    }
-    if (txt.length > 0) {
-      Utilities.sleep(200);
-      codelib.sendMessage(token, id, txt);
-      return txt;
-    }
-  }
 }
 
 function stop_bot() {
@@ -48,4 +34,41 @@ function bot_info() {
 function start_bot() {  
   var txt = codelib.setWebhook(token,weburi);
   Logger.log(txt);
+}
+
+function call_dalle(apikey, prompt) { 
+  var dalle_url = 'https://api.openai.com/v1/images/generations';
+  var options = {
+    "method": 'POST',
+    "headers": {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ` + apikey
+    },
+    "payload": JSON.stringify({
+      "model": "image-alpha-001",
+      "prompt": prompt, // "a white siamese cat"
+      "num_images": 1,
+      "size": "256x256",
+      "response_format": "url"
+    }),
+    muteHttpExceptions: true
+  }  
+  var response = UrlFetchApp.fetch(dalle_url, options);
+  var responseJson = response.getContentText();
+  var responseData = JSON.parse(responseJson);
+  Logger.log(responseData);
+  var image_url = responseData['data'][0]['url'];
+  return image_url;
+}
+
+function sendImage(token, url, id) {
+  var telegramUrl = "https://api.telegram.org/bot" + token;
+  var request = UrlFetchApp.fetch(telegramUrl + "/sendPhoto", {
+    method: "post",
+    contentType: "application/json",
+    payload: JSON.stringify({
+      chat_id: id,
+      photo: url,
+    }),
+  });
 }
