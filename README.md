@@ -1,6 +1,6 @@
 # Introduction 
-How to create serverless telegram chatbot using google app script and CHATGPT API from OpenAI.
-( added with Dall.E image generation )
+How to create serverless telegram chatbot to generate image using google app script and OpenAI Dall.E API from OpenAI.
+
 ![image](https://github.com/WingsMaker/chatgptbot/assets/32192638/425f9de3-877c-4e57-8488-69e393d988b3)
 
 
