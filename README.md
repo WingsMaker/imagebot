@@ -75,3 +75,7 @@ since the code has been changed, need to update the value of webappUrl in [7].
 ![image](https://github.com/WingsMaker/chatgptbot/assets/32192638/416ecbda-30bb-4d63-adb3-d3a24da7822f)
 
 Your telegram bot is ready !
+
+
+Reference
+https://platform.openai.com/docs/guides/images/
