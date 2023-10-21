@@ -18,8 +18,6 @@ How to create serverless telegram chatbot using google app script and CHATGPT AP
 
 https://raw.githubusercontent.com/WingsMaker/chatgptbot/main/imagebot_gas.txt
 
-![image](https://user-images.githubusercontent.com/32192638/209757618-56b172a8-5356-43c2-b215-64e4bff19d85.png)
-
 [3] Rename the project
 
 Click on the "Untitled project" to rename the project as something else. Example, "My ChatGPT bot".
